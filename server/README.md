@@ -61,11 +61,12 @@ List with one active and one completed todo:
 
 ### Filtering Todos
 
-You can filter the todo list by using `query` parameter:
+You can filter the todo list by using query parameters:
 
-- `/todos?query=active`: only return active (i.e. `"isDone"` is false) todos
-- `/todos?query=complete`: only return completed (i.e. `"isDone"` is true) todos
-- `/todos?query=all`: return the whole list; this is equal to omitting the query parameter
+| Todos | Request-URL                          |
+| ----- | ------------------------------------ |
+| Done  | http://localhost:3000/todos?isDone=1 |
+| Open  | http://localhost:3000/todos?isDone=0 |
 
 ## Create New Todo
 

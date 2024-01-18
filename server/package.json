@@ -4,11 +4,11 @@
   "description": "backend of todos app",
   "main": "index.js",
   "scripts": {
-    "start": "json-server --watch todos-db.json --routes routes.json"
+    "start": "json-server --watch todos-db.json"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "json-server": "^0.15.0"
+    "json-server": "^1.0.0-alpha.21"
   }
 }
