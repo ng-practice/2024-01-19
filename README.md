@@ -27,12 +27,7 @@ git clone https://github.com/ng-practice/2024-01-19.git workshop
 # Switch into repository directory
 cd workshop
 
-# Install dependencies for Angular application
-cd client/
-npm install
-
-# Install dependencies for Backend
-cd server/
+# Install dependencies
 npm install
 ```
 
