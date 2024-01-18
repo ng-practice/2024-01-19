@@ -1,10 +1,4 @@
-## Angular solid foundations - from zero to hero
-
-<div align="center">
-  <img src="docs/logo.svg" alt="NG-DE Logo" width="250">
-</div>
-
-> https://ng-de.org/workshops/angular-solid-foundations/
+## Angular Solid Foundations
 
 Hello 👋,
 
@@ -12,42 +6,14 @@ we are thrilled to meet you at our training.
 Please find your personal preparation guide below.
 It helps you to set up your development environment.
 
-If you have any trouble, please don't hesitate to contact [Markus] or [Gregor].
+If you have any trouble, please don't hesitate to contact [Gregor].
 
 Kind Regards
-[Markus] & [Gregor]
+[Gregor]
 
-[markus]: https://twitter.com/_der_markusende
 [gregor]: https://twitter.com/gregonnet
 
-## Slides
-
-👩‍🏫 The [slides](https://speakerdeck.com/gregonnet/angular-solid-foundations-ng-de19) to this workshop can be found at [speakerdeck.com](https://speakerdeck.com/gregonnet/angular-solid-foundations-ng-de19).
-
 ## Prerequisites
-
-### Tools
-
-Please ensure you have the following tools already installed before the workshop
-starts.
-
-- [Chrome](https://www.google.com/chrome/)
-- [Node.js 10 or higher](https://nodejs.org/en/)
-- [Visual Studio Code](https://code.visualstudio.com/)
-
-Please install the latest version of Angular CLI.
-Open up a terminal on your system and run the following command.
-
-```bash
-npm install --global @angular/cli
-```
-
-Please check if the setup was successful running the following command in your
-terminal.
-
-```bash
-ng --version
-```
 
 ### Code
 
@@ -56,16 +22,16 @@ dependencies for the Angular application and the Demo-Backend.
 
 ```bash
 # Download repository
-git clone https://github.com/ng-practice/ng-de-2019.git workshop
+git clone https://github.com/ng-practice/2024-01-19.git workshop
 
 # Switch into repository directory
 cd workshop
 
 # Install dependencies for Angular application
-npm install --prefix client
+npm install client/
 
 # Install dependencies for Backend
-npm install --prefix server
+npm install server/
 ```
 
 Please verify that both angular application and backend run on your system.
