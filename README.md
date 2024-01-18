@@ -28,10 +28,12 @@ git clone https://github.com/ng-practice/2024-01-19.git workshop
 cd workshop
 
 # Install dependencies for Angular application
-npm install client/
+cd client/
+npm install
 
 # Install dependencies for Backend
-npm install server/
+cd server/
+npm install
 ```
 
 Please verify that both angular application and backend run on your system.
