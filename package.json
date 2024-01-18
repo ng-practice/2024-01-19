@@ -2,6 +2,7 @@
   "name": "angular-solid-foundations-workshop",
   "workspaces": [
     "client",
-    "server"
+    "server",
+    "e2e"
   ]
 }
