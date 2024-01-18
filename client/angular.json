@@ -125,7 +125,6 @@
       }
     }
   },
-  "defaultProject": "todos",
   "cli": {
     "analytics": "2dfca563-7458-4935-80e6-a1e61993b6f7"
   }
