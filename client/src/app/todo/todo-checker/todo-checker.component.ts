@@ -1,4 +1,9 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Output, input } from '@angular/core';
+
+type Todo = {
+  text: string;
+  isDone: boolean;
+};
 
 @Component({
   selector: 'ws-todo-checker',
@@ -8,11 +13,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './todo-checker.component.scss',
 })
 export class TodoCheckerComponent {
-  @Input() todo = { text: '-', isDone: false };
+  todo = input.required<Todo>();
 
   @Output() toggle = new EventEmitter();
 
   emitToggle() {
-    this.toggle.emit(this.todo);
+    this.toggle.emit(this.todo());
   }
 }
