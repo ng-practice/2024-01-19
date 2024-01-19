@@ -5,7 +5,14 @@ import { TodoCheckerComponent } from './todo/todo-checker/todo-checker.component
   selector: 'ws-root',
   standalone: true,
   imports: [TodoCheckerComponent],
-  templateUrl: './app.component.html',
+  template: `
+    <h1 class="todo__h1">Todos</h1>
+
+    <!-- TODO replace $index with todo.id -->
+    @for(todo of todos; track $index) {
+    <ws-todo-checker [todo]="todo" (toggle)="toggleTodo($event)" />
+    }
+  `,
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
