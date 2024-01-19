@@ -1,9 +1,5 @@
 import { Component, EventEmitter, Output, input } from '@angular/core';
-
-type Todo = {
-  text: string;
-  isDone: boolean;
-};
+import { Todo } from './Todo';
 
 @Component({
   selector: 'ws-todo-checker',
