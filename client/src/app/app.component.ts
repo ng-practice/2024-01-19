@@ -9,5 +9,9 @@ import { TodoCheckerComponent } from './todo/todo-checker/todo-checker.component
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'You are great as you are';
+  todo = { text: '🏃🏻‍♂️ Work out', isDone: true };
+
+  notify(todo) {
+    alert(`"${todo.text}" has been clicked.`);
+  }
 }

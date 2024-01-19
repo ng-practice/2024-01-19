@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'ws-todo-checker',
@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
   templateUrl: './todo-checker.component.html',
   styleUrl: './todo-checker.component.scss',
 })
-export class TodoCheckerComponent {}
+export class TodoCheckerComponent {
+  @Input() todo = { text: '-', isDone: false };
+
+  @Output() toggle = new EventEmitter();
+
+  emitToggle() {
+    this.toggle.emit(this.todo);
+  }
+}
