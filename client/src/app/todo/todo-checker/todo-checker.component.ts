@@ -1,12 +1,18 @@
 import { Component, EventEmitter, Output, input } from '@angular/core';
-import { Todo } from './Todo';
+import { Todo } from '../todo';
 
 @Component({
   selector: 'ws-todo-checker',
   standalone: true,
-  imports: [],
-  templateUrl: './todo-checker.component.html',
-  styleUrl: './todo-checker.component.scss',
+  template: `
+    <div class="todo">
+      <label class="todo__label">
+        {{ todo().text }}
+        <input type="checkbox" [checked]="todo().isDone" (change)="emitToggle()" />
+        <span class="todo__checkmark"></span>
+      </label>
+    </div>
+  `,
 })
 export class TodoCheckerComponent {
   todo = input.required<Todo>();
