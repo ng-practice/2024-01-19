@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Todo } from './todo/todo-checker/Todo';
 import { TodoCheckerComponent } from './todo/todo-checker/todo-checker.component';
 
 @Component({
@@ -16,12 +17,12 @@ import { TodoCheckerComponent } from './todo/todo-checker/todo-checker.component
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  todos = [
+  todos: Todo[] = [
     { text: '🏃🏻‍♂️ Work out', isDone: true },
     { text: '🍕 Make something to eat', isDone: false },
   ];
 
-  toggleTodo(todoForUpdate) {
+  toggleTodo(todoForUpdate: Todo) {
     const index = this.todos.findIndex(todo => todo.text === todoForUpdate.text);
 
     if (index === -1) {
