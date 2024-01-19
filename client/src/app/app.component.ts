@@ -17,7 +17,6 @@ import { TodosService } from './todo/todos.service';
       }
     </div>
   `,
-  styleUrls: ['./app.component.scss'],
   imports: [TodoCheckerComponent, TodoQuickAddComponent],
 })
 export class AppComponent implements OnInit {
