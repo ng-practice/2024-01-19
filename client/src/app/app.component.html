@@ -1,2 +1,6 @@
 <h1 class="todo__h1">Todos</h1>
-<ws-todo-checker [todo]="todo" (toggle)="toggleTodo($event)" *ngFor="let todo of todos" />
+
+<!-- TODO replace $index with todo.id -->
+@for(todo of todos; track $index) {
+<ws-todo-checker [todo]="todo" (toggle)="toggleTodo($event)" />
+}
