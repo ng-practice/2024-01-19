@@ -9,6 +9,10 @@ import { environment } from '../../environments/environment';
 export class TodosService {
   readonly #http = inject(HttpClient);
 
+  create(todo: Todo): Observable<Todo> {
+    return this.#http.post<Todo>(environment.apiEndpoint, todo);
+  }
+
   list(): Observable<Todo[]> {
     return this.#http.get<Todo[]>(environment.apiEndpoint);
   }
