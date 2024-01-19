@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 
 describe('When the App starts', () => {
   it('displays the resources section', () => {
-    TestBed.configureTestingModule({ declarations: [AppComponent] });
+    TestBed.configureTestingModule({ imports: [AppComponent] });
 
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
