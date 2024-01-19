@@ -1,14 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Todo } from './todo';
+
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class TodosService {
-  list(): Todo[] {
-    return [
-      { text: '🏃🏻‍♂️ Work out', isDone: true },
-      { text: '🍕 Make something to eat', isDone: false },
-      { text: '🏃🏻‍♂️ Work out', isDone: true },
-      { text: '🍕 Make something to eat', isDone: false },
-    ];
+  readonly #http = inject(HttpClient);
+
+  list(): Observable<Todo[]> {
+    return this.#http.get<Todo[]>(environment.apiEndpoint);
   }
 }

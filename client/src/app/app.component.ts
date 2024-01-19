@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
   readonly #todosService = inject(TodosService);
 
   ngOnInit() {
-    this.todos.set(this.#todosService.list());
+    this.#todosService.list().subscribe(todos => this.todos.set(todos));
   }
 
   addTodo(todo: Todo) {
