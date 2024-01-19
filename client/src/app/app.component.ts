@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { Todo } from './todo/todo';
 import { TodoCheckerComponent } from './todo/todo-checker/todo-checker.component';
 import { TodoQuickAddComponent } from './todo/todo-quick-add/todo-quick-add.component';
@@ -22,10 +22,10 @@ import { TodosService } from './todo/todos.service';
 export class AppComponent implements OnInit {
   todos = signal<Todo[]>([]);
 
-  constructor(private readonly todosService: TodosService) {}
+  readonly #todosService = inject(TodosService);
 
   ngOnInit() {
-    this.todos.set(this.todosService.list());
+    this.todos.set(this.#todosService.list());
   }
 
   addTodo(todo: Todo) {
