@@ -1,7 +1,8 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { Todo } from './todo/todo';
 import { TodoCheckerComponent } from './todo/todo-checker/todo-checker.component';
 import { TodoQuickAddComponent } from './todo/todo-quick-add/todo-quick-add.component';
+import { TodosService } from './todo/todos.service';
 
 @Component({
   selector: 'ws-root',
@@ -19,11 +20,14 @@ import { TodoQuickAddComponent } from './todo/todo-quick-add/todo-quick-add.comp
   styleUrls: ['./app.component.scss'],
   imports: [TodoCheckerComponent, TodoQuickAddComponent],
 })
-export class AppComponent {
-  todos = signal<Todo[]>([
-    { text: '🏃🏻‍♂️ Work out', isDone: true },
-    { text: '🍕 Make something to eat', isDone: false },
-  ]);
+export class AppComponent implements OnInit {
+  todos = signal<Todo[]>([]);
+
+  constructor(private readonly todosService: TodosService) {}
+
+  ngOnInit() {
+    this.todos.set(this.todosService.list());
+  }
 
   addTodo(todo: Todo) {
     this.todos.update(todos => [todo, ...todos]);
